@@ -2,7 +2,7 @@
 
 ## Sommaire:
 [I. Présentation du sujet](#Présentation-du-sujet)  
-        [I.a. Matériel](#Matériel)  
+        [I.a. Matériel & technologie utilisée](#Matériel-&-technologie-utilisée)  
         [I.b. Conditions](#Conditions)  
 [II. Mise en place des Vlans et IPs](#Mise-en-place-des-Vlans-et-IPs)  
 [III. Configuration des switchs](#Configuration-des-switchs)   
@@ -15,8 +15,37 @@
 [VI. Conclusion](#Conclusion)
 
 ## Présentation du sujet  
-### Matériel  
+Mise en situation: 
+L’entreprise QB Corpest divisée en 4 services:
+* Ressources Humaines: 25 employés
+* Direction: 5 employés
+* Marketing: 250 employés
+* Techniciens: 1020 employés
+### Matériel  & technologie utilisée
+* 5 x Switchs Cisco  2960
+* 1 x Routeur Cisco 2911
+* 1 x Serveur DNS
+* 1 x Serveur Web
+* 1 x Serveur DHCP
+* 4 PC par service (16 PCs au total)
+* Packet Tracer
 ### Conditions  
+La topologie est la suivante:
+* Il y a 4 switchs d’accès connectés à un switch de distribution
+* Le switch de distribution est connecté au routeur
+* C’est donc une architecture en 3 tiers
+* Sur chaque switch sont connectés 4 PCsun de chaque service  
+
+L’entreprise veut:
+* Que chaque service soit segmenté au niveau informatique (Vlans+ IP)
+* Que tous les services puissent communiquer entre eux (Les PCspeuvent tous se pinger)
+* Que les liens entre les switchs d’accès et le switch de distribution possède une bande passante 4 fois    supérieure aux autres 
+* Que les switchs d’accès puissent joindre le switch de distribution par un chemin secondaire voir ternaire si celui-ci ou ceux-civenaient à être défectueux, sans créer de boucle.
+* Que seul le service RH puisse surfer sur le web (serveur http)
+* Que le service marketing obtienne des IPsdynamiquement (dhcp)
+* Que seules les 10 premières IPsdu service Techniciens puissent pinger le serveur HTTPQue les switchs possèdent des descriptions claires sur chaque port
+* Que les noms des VLANssoit clairs
+* Que les switchs ne puissent pas résoudre de noms dans la console
 
 ## Mise en place des Vlans et IPs  
 ![topo](topo.png)
