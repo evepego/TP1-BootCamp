@@ -2,14 +2,14 @@
 
 ## Sommaire:
 [I. Présentation du sujet](#Présentation-du-sujet)  
-    [I.a. Matériel](#Matériel)  
-    [I.b. Conditions](#Conditions)  
+        [I.a. Matériel](#Matériel)  
+        [I.b. Conditions](#Conditions)  
 [II. Mise en place des Vlans et IPs](#Mise-en-place-des-Vlans-et-IPs)  
 [III. Configuration des switchs](#Configuration-des-switchs)   
     [III.a. Switchs d'accès](#Switchs-d'accès)  
     [III.b. Switch de distribution](#Switch-de-distribution)  
 [IV. Configuration du routeur](#Configuration-du-routeur)  
-[V. Configuration des serveurs](#Configuration des serveurs)  
+[V. Configuration des serveurs](#Configuration-des-serveurs) 
     [V.a. Serveur WEB](#Serveur-WEB)  
     [V.b. Serveur DHCP](#Serveur-DHCP)
 [VI. Conclusion](#Conclusion)
@@ -69,18 +69,6 @@ interface FastEthernet0/5
 !
 ```
 ## Configuration du routeur  
-*Pour n'autoriser que 15 ip à passer par ici:
-```bash
-Router(config)#interface gigabitEthernet 0/2.4
-Router(config-subif)#no shut
-Router(config-subif)#encapsulation dot1Q 4
-Router(config-subif)#ip address 10.1.1.14 255.255.255.240
-```
-## Configuration des serveurs  
-### Serveur WEB  
-![serveurweb](servuerweb.png)
-### Serveur DHCP  
-![serveurdhcp](serveurdhcp.png)
 ```bash
 Router(config)#interface gigabitEthernet 0/1
 Router(config-if)#no shutdown 
@@ -90,4 +78,17 @@ Router(config-subif)#no shutdown
 Router(config-subif)#encapsulation dot1Q 3
 Router(config-subif)#ip address dhcp
 ```
+Pour n'autoriser que 15 ip à passer par ici:
+```bash
+Router(config)#interface gigabitEthernet 0/2.4
+Router(config-subif)#no shut
+Router(config-subif)#encapsulation dot1Q 4
+Router(config-subif)#ip address 10.1.1.14 255.255.255.240
+```
+## Configuration des serveurs  
+### Serveur WEB  
+![serveurweb](serveurweb.png)
+### Serveur DHCP  
+![serveurdhcp](serveurdhcp.png)
+
 ## Conclusion  
