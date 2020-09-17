@@ -121,3 +121,4 @@ Router(config-subif)#ip address 10.1.1.14 255.255.255.240
 ![serveurdhcp](serveurdhcp.png)
 
 ## Conclusion  
+L'installation de packet tracer sur fedora a fait planter le système et a tout cassé. Nous sommes donc passés sur Mint. 
